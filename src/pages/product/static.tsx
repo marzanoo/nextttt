@@ -8,11 +8,9 @@ const ProductPage = ({ products }: { products: ProductType[] }) => {
     </div>
   );
 };
-
 export default ProductPage;
 
-// dipanggil setiap request
-export async function getServerSideProps() {
+export async function getStaticProps() {
   // fetch data
   const res = await fetch("http://localhost:3000/api/product");
   const response = await res.json();
